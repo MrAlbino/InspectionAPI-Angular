@@ -1,0 +1,25 @@
+<form>
+
+    <div class="mb-3">
+        <label for="checkOutDate" class="form-label">Check Out Date</label>
+        <input type="date" class="form-control" name="checkOutDate" [(ngModel)]="checkOutDate" required> 
+    </div>
+    <div class="mb-3">
+        <label for="returnDate" class="form-label">Return Date</label>
+        <input type="date" class="form-control" name="returnDate" [(ngModel)]="returnDate" required> 
+    </div>
+    
+    <div class="mb-3">
+        <select class="form-control" name="countryId" id="countryId" [(ngModel)]="countryId">
+            <option *ngFor="let country of countriesList$|async" [value]="country.id">
+                {{country.countryName}}
+            </option>
+        </select>
+    </div>
+    <button class="btn btn-primary" (click)="calculateRequest()">Calculate</button>
+    <div class="mb-3"></div>
+
+</form>
+<app-penalty-result [searchResult]="searchResult" *ngIf="searched">
+
+</app-penalty-result>

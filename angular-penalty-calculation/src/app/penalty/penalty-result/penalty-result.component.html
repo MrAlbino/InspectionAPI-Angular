@@ -1,0 +1,12 @@
+<table class="table table-striped">
+    <thead>
+        <th>Country</th>
+        <th>Penalty</th>
+    </thead>
+    <tbody>
+        <tr *ngIf="searchResult">
+            <td>{{searchResult.countryName}}</td>
+            <td>{{searchResult.penalty}}{{searchResult.currency}}</td>
+        </tr>
+    </tbody>
+</table>
